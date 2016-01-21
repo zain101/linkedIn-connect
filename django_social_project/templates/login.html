@@ -1,0 +1,12 @@
+{% if user and not user.is_anonymous %}
+  <a>Hello, {{ user }}!</a>
+  <br>
+  <a>Context==>, {{ user.access_token }}!</a>
+  <br>
+  <a href="/logout">Logout</a>
+{% else %}
+  <a href="{% url 'social:begin' backend='linkedin-oauth2' %}">Login with Linkedin</a>
+{% endif %}
+
+
+
